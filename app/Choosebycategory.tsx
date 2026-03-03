@@ -23,7 +23,7 @@ const categories = [
 export default function CategorySection() {
   return (
     <section
-      className="w-full py-[70px] bg-[#effdb5c8]"
+      className="w-full py-[70px] bg-[#FAFFE5]"
     >
       <div className="max-w-[1440px] mx-auto px-6">
         {/* Header */}

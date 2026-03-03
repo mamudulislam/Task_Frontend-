@@ -5,6 +5,7 @@ import StartStart from './StartStart';
 import Rootedinscience from './Rootedinscience';
 import Choosebycategory from './Choosebycategory';
 import PopularProducts from './Popularproducts';
+import Naturalmakeup from './Naturalmakeup';
 const OranicHero: React.FC = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-white">
@@ -14,6 +15,7 @@ const OranicHero: React.FC = () => {
       <Rootedinscience/>
       <Choosebycategory/>
       <PopularProducts/>
+      <Naturalmakeup/>
     </div>
   );
 };
