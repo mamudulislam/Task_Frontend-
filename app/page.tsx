@@ -6,6 +6,12 @@ import Rootedinscience from './Rootedinscience';
 import Choosebycategory from './Choosebycategory';
 import PopularProducts from './Popularproducts';
 import Naturalmakeup from './Naturalmakeup';
+import Customerreviews from './Customerreviews';
+import Afterbybefore from './Afterbybefore';
+import FAQ from './FAQ';
+import Ourstories from './Ourstories';
+import Expertskincare from './Expertskincare';
+import Footer from './Footer';
 const OranicHero: React.FC = () => {
   return (
     <div className="relative min-h-screen w-full bg-white">
@@ -16,6 +22,12 @@ const OranicHero: React.FC = () => {
       <Choosebycategory/>
       <PopularProducts/>
       <Naturalmakeup/>
+      <Customerreviews/>
+      <Afterbybefore/>
+      <FAQ/>
+      <Ourstories/>
+      <Expertskincare/>
+      <Footer/>
     </div>
   );
 };
