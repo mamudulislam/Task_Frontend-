@@ -65,7 +65,7 @@ export default function FaqSection() {
                 </button>
                 
                 <div
-                  ref={el => contentRefs.current[index] = el}
+                  ref={el => { contentRefs.current[index] = el }}
                   style={{
                     maxHeight: isOpen ? `${contentRefs.current[index]?.scrollHeight}px` : '0px',
                     transition: 'max-height 0.5s ease',
