@@ -1,0 +1,9 @@
+@keyframes progress {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+.animate-progress {
+  transform-origin: left;
+  animation: progress 2s ease-in-out forwards;
+}

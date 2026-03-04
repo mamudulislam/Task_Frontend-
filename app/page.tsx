@@ -8,7 +8,7 @@ import PopularProducts from './Popularproducts';
 import Naturalmakeup from './Naturalmakeup';
 const OranicHero: React.FC = () => {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-white">
+    <div className="relative min-h-screen w-full bg-white">
       <Navbar />
       <HeroContent />
       <StartStart />

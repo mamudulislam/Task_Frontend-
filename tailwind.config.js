@@ -6,7 +6,17 @@ module.exports = {
     './components/**/*.{ts,tsx,js,jsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        progress: 'progress 5s linear infinite',
+      },
+      keyframes: {
+        progress: {
+          '0%': { transform: 'scaleX(0)' },
+          '100%': { transform: 'scaleX(1)' },
+        },
+      },
+    },
   },
   safelist: [
     'text-[#1E1E1E]',

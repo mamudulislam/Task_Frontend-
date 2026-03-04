@@ -12,7 +12,7 @@ const products = Array.from({ length: 8 }, (_, i) => ({
 export default function PopularProducts() {
   return (
     <section className="w-full bg-[#F5F5F5] py-16 md:py-20">
-      <div className="mx-auto max-w-[1440px] px-5 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px]">
         {/* Header */}
         <div className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
