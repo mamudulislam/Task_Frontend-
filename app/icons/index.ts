@@ -1,1 +1,1 @@
-export { Search, ShoppingBag, User, ChevronDown } from 'lucide-react';
+export { Search, ShoppingBag, User, ChevronDown, Menu, X } from 'lucide-react';
