@@ -99,7 +99,7 @@ const CustomerReviews: React.FC = () => {
             {/* Main Image Container */}
             <div className="rounded-[32px] md:rounded-[40px] overflow-hidden aspect-[4/5] shadow-[0_20px_50px_rgba(0,0,0,0.1)] relative">
               <img
-                src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=800"
+                src="/images/facewash.png"
                 alt="Skincare application"
                 className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
               />

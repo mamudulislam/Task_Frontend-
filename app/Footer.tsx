@@ -68,16 +68,16 @@ const Footer = () => {
                         </div>
                         <div className="flex gap-3">
                             <SocialCircle>
-                                <Image src="/images/facebook.png" alt="Facebook" width={24} height={24} className="object-contain" />
+                                <Image src="/images/FaceBook.png" alt="Facebook" width={24} height={24} className="object-contain" />
                             </SocialCircle>
                             <SocialCircle>
                                 <Image src="/images/Instagaram.png" alt="Instagram" width={24} height={24} className="object-contain" />
                             </SocialCircle>
                             <SocialCircle>
-                                <Image src="/images/whatsapp.png" alt="WhatsApp" width={24} height={24} className="object-contain" />
+                                <Image src="/images/Whatsapp.png" alt="WhatsApp" width={24} height={24} className="object-contain" />
                             </SocialCircle>
                             <SocialCircle>
-                                <Image src="/images/youtube.png" alt="YouTube" width={24} height={24} className="object-contain" />
+                                <Image src="/images/YouTube.png" alt="YouTube" width={24} height={24} className="object-contain" />
                             </SocialCircle>
                         </div>
                     </div>
