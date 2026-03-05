@@ -48,34 +48,34 @@ const CustomerReviews: React.FC = () => {
   const currentReview = reviews[currentIndex];
 
   return (
-    <div className="bg-[#F9FBE7] selection:bg-[#6B7D27]/20">
+    <div className="bg-[#F9FBE7] selection:bg-[#6B7D27]/20 overflow-hidden">
       <div className="max-w-[1440px] mx-auto min-h-screen flex items-center justify-center p-6 md:p-12 lg:p-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* LEFT SIDE: Review Text */}
-          <div className="space-y-10 z-20">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#2D3319] tracking-tight">
+          <div className="space-y-8 md:space-y-10 z-20 order-2 lg:order-1">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#2D3319] tracking-tight text-center lg:text-left">
               Customer Reviews!
             </h2>
 
-            <div className={`transition-all duration-500 ease-in-out ${fade ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}>
-              <p className="text-[#4A4F35] font-serif italic text-2xl md:text-3xl leading-snug max-w-lg">
+            <div className={`transition-all duration-500 min-h-[200px] ease-in-out ${fade ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}>
+              <p className="text-[#4A4F35] font-serif italic text-xl md:text-2xl lg:text-3xl leading-snug max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
                 {currentReview.text}
               </p>
 
-              <div className="mt-10 flex items-center gap-4">
+              <div className="mt-8 md:mt-10 flex items-center justify-center lg:justify-start gap-4">
                 <img
                   src={currentReview.image}
                   alt={currentReview.name}
-                  className="w-14 h-14 rounded-full object-cover shadow-sm"
+                  className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover shadow-sm"
                 />
-                <div>
-                  <h4 className="font-serif text-[#2D3319] text-xl">
+                <div className="text-left">
+                  <h4 className="font-serif text-[#2D3319] text-lg md:text-xl">
                     {currentReview.name}
                   </h4>
                   <div className="flex items-center gap-1.5">
                     <Star className="w-4 h-4 fill-[#6B7D27] text-[#6B7D27]" />
-                    <span className="text-[#2D3319] font-medium pt-0.5">
+                    <span className="text-[#2D3319] font-medium pt-0.5 text-sm md:text-base">
                       {currentReview.rating.toFixed(1)}
                     </span>
                   </div>
@@ -83,8 +83,8 @@ const CustomerReviews: React.FC = () => {
               </div>
             </div>
 
-            {/* Navigation */}
-            <div className="flex gap-4">
+            {/* Navigation Buttons */}
+            <div className="flex justify-center lg:justify-start gap-4 pt-4">
               <button onClick={prevSlide} className="group p-3 rounded-full border border-[#DCE4C9] hover:bg-[#6B7D27] transition-all duration-300">
                 <ArrowLeft size={22} className="text-[#6B7D27] group-hover:text-white" />
               </button>
@@ -94,10 +94,10 @@ const CustomerReviews: React.FC = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE: Image + Floating Card */}
-          <div className="relative group">
+          {/* RIGHT SIDE: Main Image */}
+          <div className="relative group order-1 lg:order-2">
             {/* Main Image Container */}
-            <div className="rounded-[40px] overflow-hidden aspect-[4/5] shadow-[0_20px_50px_rgba(0,0,0,0.1)] relative">
+            <div className="rounded-[32px] md:rounded-[40px] overflow-hidden aspect-[4/5] shadow-[0_20px_50px_rgba(0,0,0,0.1)] relative">
               <img
                 src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=800"
                 alt="Skincare application"
@@ -105,23 +105,26 @@ const CustomerReviews: React.FC = () => {
               />
             </div>
 
-            {/* ✅ FLOATING PRODUCT CARD */}
-            <div className="absolute top-[45%] -left-8 md:-left-16 lg:-left-20 transform -translate-y-1/2 w-64 md:w-72 bg-white rounded-3xl p-4 shadow-[0_15px_35px_rgba(0,0,0,0.12)] z-30">
-              <div className="relative rounded-2xl overflow-hidden mb-4 aspect-square">
-                {/* Discount Badge */}
+            {/* ✅ FLOATING PRODUCT CARD (HIDDEN ON MOBILE/TABLET) */}
+            <div className="hidden lg:block absolute top-[45%] -left-20 -translate-y-1/2 w-72 bg-white rounded-3xl p-4 shadow-[0_15px_35px_rgba(0,0,0,0.12)] z-30 transition-all duration-300">
+              
+              {/* Product Image Box */}
+              <div className="relative rounded-2xl overflow-hidden mb-4 aspect-square bg-[#f3f4ef] flex items-center justify-center">
                 <div className="absolute top-0 left-0 bg-[#6B7D27] text-white text-xs font-bold px-3 py-1.5 rounded-br-xl z-10">
                   10%
                 </div>
                 <img 
                   src="/images/products.png" 
                   alt="Cucumber Extract" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-4" 
                 />
               </div>
               
-              <h3 className="font-serif text-[#2D3319] text-lg mb-3">Cucumber Extract</h3>
+              <h3 className="font-serif text-[#2D3319] text-lg mb-3">
+                Cucumber Extract
+              </h3>
               
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center justify-between gap-1">
                 <div className="flex items-center gap-2">
                   <span className="text-xl font-bold text-[#2D3319]">$24.00</span>
                   <span className="text-sm text-gray-400 line-through decoration-1">$32.00</span>

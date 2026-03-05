@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const faqData = [
@@ -31,37 +31,48 @@ export default function FaqSection() {
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   return (
-    <section className="max-w-[1440px] mx-auto px-6 py-20 flex flex-col lg:flex-row gap-16 items-start bg-white font-serif">
+    <section className="max-w-[1440px] mx-auto px-6 py-12 md:py-20 flex flex-col lg:flex-row gap-10 lg:gap-16 items-start bg-white font-serif overflow-hidden">
       {/* Left Content */}
-      <div className="flex-1 space-y-6">
-        <h2 style={{ fontFamily: 'EB Garamond', fontWeight: 500, fontStyle: 'normal', fontSize: '56px', lineHeight: '72px', letterSpacing: '0%' }} className="text-[#1a1a1a]">
+      <div className="flex-1 w-full space-y-4 md:space-y-6">
+        <h2 
+          style={{ fontFamily: 'EB Garamond', fontWeight: 500, fontStyle: 'normal' }} 
+          className="text-[#1a1a1a] text-[36px] leading-[44px] md:text-[56px] md:leading-[72px] tracking-tight"
+        >
           We've got the answers you need
         </h2>
-        <p style={{ fontFamily: 'EB Garamond', fontWeight: 400, fontStyle: 'Regular', fontSize: '24px', lineHeight: '32px', letterSpacing: '0%' }} className="width-[652px] text-[#737373]">
+        <p 
+          style={{ fontFamily: 'EB Garamond', fontWeight: 400 }} 
+          className="max-w-[652px] text-[#737373] text-[18px] leading-[26px] md:text-[24px] md:leading-[32px]"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, 
           luctus nec ullamcorper mattis, pulvinar dapibus leo.
         </p>
 
-        <div className="mt-10 space-y-2">
+        <div className="mt-8 md:mt-10 space-y-2">
           {faqData.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div 
                 key={index}
-                className={`transition-all duration-500 rounded-lg overflow-hidden ${isOpen ? 'bg-[#faffea]' : 'bg-transparent'}`}
+                className={`transition-all duration-500 rounded-lg overflow-hidden ${isOpen ? 'bg-[#faffea]' : 'bg-transparent border-b border-gray-100 lg:border-none'}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between p-5 text-left group"
+                  className="w-full flex items-center justify-between p-4 md:p-5 text-left group"
                 >
-                  <span style={{ fontFamily: 'EB Garamond', fontWeight: 500, fontStyle: 'normal', fontSize: '24px', lineHeight: '32px', letterSpacing: '0%' }} className="text-[#1a1a1a]">
+                  <span 
+                    style={{ fontFamily: 'EB Garamond', fontWeight: 500 }} 
+                    className="text-[#1a1a1a] text-[18px] leading-[24px] md:text-[24px] md:leading-[32px] pr-4"
+                  >
                     {faq.question}
                   </span>
-                  {isOpen ? (
-                    <ChevronUp className="w-5 h-5 text-gray-800" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-800" />
-                  )}
+                  <div className="flex-shrink-0">
+                    {isOpen ? (
+                      <ChevronUp className="w-5 h-5 text-gray-800" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-800" />
+                    )}
+                  </div>
                 </button>
                 
                 <div
@@ -70,11 +81,14 @@ export default function FaqSection() {
                     maxHeight: isOpen ? `${contentRefs.current[index]?.scrollHeight}px` : '0px',
                     transition: 'max-height 0.5s ease',
                   }}
-                  className="px-5 pb-6 text-gray-500 max-w-md overflow-hidden"
+                  className="px-4 md:px-5 pb-6 text-gray-500 overflow-hidden"
                 >
-                  <span style={{ fontFamily: 'EB Garamond', fontWeight: 400, fontStyle: 'normal', fontSize: '16px', lineHeight: '24px', letterSpacing: '0%' }}>
+                  <p 
+                    style={{ fontFamily: 'EB Garamond', fontWeight: 400 }}
+                    className="text-[15px] leading-[22px] md:text-[16px] md:leading-[24px] max-w-md"
+                  >
                     {faq.answer}
-                  </span>
+                  </p>
                 </div>
               </div>
             );
@@ -83,8 +97,8 @@ export default function FaqSection() {
       </div>
 
       {/* Right Image Container */}
-      <div className="flex-1 w-full">
-        <div className="relative aspect-[4/5] rounded-[60px] overflow-hidden shadow-2xl">
+      <div className="flex-1 w-full order-first lg:order-last">
+        <div className="relative aspect-[4/5] rounded-[30px] md:rounded-[60px] overflow-hidden shadow-2xl">
           <img 
             src="/images/Himalayanimfachwash.png" 
             alt="Natural Skincare Products"
