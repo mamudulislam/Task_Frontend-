@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
       <div className="text-2xl font-bold tracking-tight text-olive-900">
         <img src="/images/ORANIC.png" alt="ORANIC" className="w-24 sm:w-28 md:w-auto" />
       </div>
-      
+
       <ul className="hidden md:flex items-center gap-[32px] text-[24px] font-normal text-[#000000]" style={{ fontFamily: 'EB Garamond', fontWeight: 400, fontStyle: 'normal', fontSize: '24px', lineHeight: '32px', letterSpacing: '0%' }}>
         <li className="flex items-center gap-1 cursor-pointer hover:text-olive-700 transition-colors">Category <ChevronDown size={14} /></li>
         <li className="flex items-center gap-1 cursor-pointer hover:text-olive-700 transition-colors">Shop <ChevronDown size={14} /></li>
@@ -21,25 +21,26 @@ const Navbar: React.FC = () => {
       </ul>
 
       <div className="flex items-center gap-3 sm:gap-5 text-gray-700">
-        <div className="relative md:hidden">
+        {/* Search Logic for both Mobile and Desktop */}
+        <div className="relative flex items-center">
           {isSearchOpen ? (
             <div className="flex items-center">
               <input
                 type="text"
                 placeholder="Search..."
-                className="w-32 sm:w-40 px-2 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:border-olive-700"
+                className="w-32 sm:w-40 md:w-60 px-2 py-1 text-sm border border-gray-300 rounded-md focus:outline-none focus:border-olive-700"
                 autoFocus
               />
-              <X 
-                size={20} 
-                className="ml-2 cursor-pointer hover:text-black" 
+              <X
+                size={20}
+                className="ml-2 cursor-pointer hover:text-black"
                 onClick={() => setIsSearchOpen(false)}
               />
             </div>
           ) : (
-            <Search 
-              size={20} 
-              className="cursor-pointer hover:text-black" 
+            <Search
+              size={20}
+              className="cursor-pointer hover:text-black"
               onClick={() => {
                 setIsSearchOpen(true);
                 setIsMenuOpen(false);
@@ -47,11 +48,12 @@ const Navbar: React.FC = () => {
             />
           )}
         </div>
-        <Search size={20} className="hidden md:block cursor-pointer hover:text-black" />
+
         <div className="relative">
           <ShoppingBag size={20} className="cursor-pointer hover:text-black" />
         </div>
         <User size={20} className="cursor-pointer hover:text-black" />
+        
         <button
           className="md:hidden p-1 cursor-pointer"
           onClick={() => {
